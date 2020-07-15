@@ -8,7 +8,7 @@ canvas {
 
 @font-face { 
 	font-family: Minecraft; 
-	src: url('../assets/Minecraft.TTF'); 
+	src: url('../jlioanag.github.io/assets/Minecraft.TTF'); 
 }
 
 a { 
@@ -29,7 +29,7 @@ table {
 	font-size: 64px;
 	font-family: Minecraft;
 	position: absolute;
-	top: 25px;
+	top: 1px;
 	width: 100%;
 	text-align: center;
 	z-index: 100;
@@ -41,7 +41,7 @@ table {
 	font-size: 40px;
 	font-family: Minecraft;
 	position: absolute;
-	top: 125px;
+	top: 150px;
 	width: 100%;
 	text-align: center;
 	z-index: 100;

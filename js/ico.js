@@ -8,17 +8,17 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
 // sets renderer background color
-renderer.setClearColor("#222222")
-document.body.appendChild( renderer.domElement )
-camera.position.z = 5
+renderer.setClearColor("#222222");
+document.body.appendChild(renderer.domElement);
+camera.position.z = 1.25;
 
 // resize canvas on resize window
 window.addEventListener( 'resize', () => {
-	let width = window.innerWidth
-	let height = window.innerHeight
-	renderer.setSize( width, height )
-	camera.aspect = width / height
-	camera.updateProjectionMatrix()
+	let width = window.innerWidth;
+	let height = window.innerHeight;
+	renderer.setSize(width, height);
+	camera.aspect = width / height;
+	camera.updateProjectionMatrix();
 })
 
 var geometry = new THREE.IcosahedronGeometry(1, 0);
@@ -30,12 +30,12 @@ scene.add(ico);
 var geometry = new THREE.IcosahedronGeometry(2, 1);
 var material = new THREE.MeshBasicMaterial({
 	color: "#dadada", wireframe: true, transparent: true
-})
+});
 var wireframeIco = new THREE.Mesh (geometry, material);
 scene.add(wireframeIco);
 
 // ambient light
-var primary = 0xffffff
+var primary = 0xffffff;
 var ambientLight = new THREE.AmbientLight(primary, 0.20);
 scene.add(ambientLight);
 
@@ -65,5 +65,9 @@ function animate() {
 	wireframeIco.rotation.x -= spd / 10;
 	wireframeIco.rotation.y -= spd / 10;
 	renderer.render(scene, camera);
+	if (camera.position.z < 5){
+		camera.position.z += 0.0025;
+	}
+
 }
 animate();
