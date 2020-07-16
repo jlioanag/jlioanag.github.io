@@ -8,7 +8,7 @@ canvas {
 
 @font-face { 
 	font-family: Minecraft; 
-	src: url('../assets/Minecraft.TTF'); 
+	src: url('./assets/Minecraft.TTF'); 
 }
 
 a { 
