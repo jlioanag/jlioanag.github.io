@@ -1,7 +1,8 @@
 var scene = new THREE.Scene();
 var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
-camera.position.z = 5;
+camera.position.z = 1.25;
+camera.position.x = -1.75;
 
 var renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
@@ -10,7 +11,6 @@ document.body.appendChild(renderer.domElement);
 // sets renderer background color
 renderer.setClearColor("#222222");
 document.body.appendChild(renderer.domElement);
-camera.position.z = 1.25;
 
 // resize canvas on resize window
 window.addEventListener( 'resize', () => {
@@ -46,6 +46,14 @@ pointLight.position.set(25, 50, 25);
 scene.add(pointLight);
 
 spd = 0.005;
+
+$(document).ready(function(){
+    $("#title").hide();
+});
+// setTimeout(function() {
+// 	$("#title").fadeIn("slow");
+// }, 6000);
+
 function speedUp() {
 	spd *= 2.5;
 	ambientLight.intensity = 0.25;
@@ -58,16 +66,31 @@ function slowDown() {
 	pointLight.intensity = 0.20;
 }
 
+function fadeStuff() {
+	$(document).ready(function(){
+    $("#title").fadeIn("slow");
+	});
+}
+
 function animate() {
+	var flag = 1;
 	requestAnimationFrame(animate);
 	ico.rotation.x += spd;
 	ico.rotation.y += spd;
 	wireframeIco.rotation.x -= spd / 10;
 	wireframeIco.rotation.y -= spd / 10;
 	renderer.render(scene, camera);
-	if (camera.position.z < 5){
-		camera.position.z += 0.0025;
+	if (camera.position.z < 4.75) {	
+		camera.position.z += 0.005;
+		console.log("z: " + camera.position.z);
+	}
+	if (camera.position.x < 0) {
+		camera.position.x += 0.0025;
+		console.log("x: " + camera.position.x);
 	}
 
+	if (camera.position.z >= 4.75 && camera.position.x >= 0 && flag == 1) {
+		fadeStuff();
+	}
 }
 animate();

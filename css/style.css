@@ -8,7 +8,7 @@ canvas {
 
 @font-face { 
 	font-family: Minecraft; 
-	src: url('../jlioanag.github.io/assets/Minecraft.TTF'); 
+	src: url('../assets/Minecraft.TTF'); 
 }
 
 a { 
@@ -20,7 +20,7 @@ table {
 	table-layout: fixed;
 	width: 70%;
 	margin-left: auto;
-  margin-right: auto;
+	margin-right: auto;
 }
 
 #title {
@@ -34,6 +34,41 @@ table {
 	text-align: center;
 	z-index: 100;
 	display:block;
+
+	
+}
+
+@keyframes fadein {
+	from {
+		opacity:0;
+	}
+	to {
+		opacity:1;
+	}
+}
+@-moz-keyframes fadein { /* Firefox */
+	from {
+		opacity:0;
+	}
+	to {
+		opacity:1;
+	}
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+	from {
+		opacity:0;
+	}
+	to {
+		opacity:1;
+	}
+}
+@-o-keyframes fadein { /* Opera */
+	from {
+		opacity:0;
+	}
+	to {
+		opacity: 1;
+	}
 }
 
 #headers {
