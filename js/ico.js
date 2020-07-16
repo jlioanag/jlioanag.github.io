@@ -82,11 +82,11 @@ function animate() {
 	renderer.render(scene, camera);
 	if (camera.position.z < 4.75) {	
 		camera.position.z += 0.005;
-		console.log("z: " + camera.position.z);
+		// console.log("z: " + camera.position.z);
 	}
 	if (camera.position.x < 0) {
 		camera.position.x += 0.0025;
-		console.log("x: " + camera.position.x);
+		// console.log("x: " + camera.position.x);
 	}
 
 	if (camera.position.z >= 4.75 && camera.position.x >= 0 && flag == 1) {

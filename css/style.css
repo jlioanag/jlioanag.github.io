@@ -6,10 +6,10 @@ canvas {
 	display: block; 
 }
 
-@font-face { 
-	font-family: Minecraft; 
-	src: url('./assets/Minecraft.TTF'); 
-}
+/*@font-face { 
+	font-family: ArchivoBlack; 
+	src: url('../jlioanag.github.io/assets/ArchivoBlack-Regular.ttf'); 
+}*/
 
 a { 
 	color: inherit; 
@@ -27,7 +27,7 @@ table {
 	color: white;
 	top: 24px;
 	font-size: 64px;
-	font-family: Minecraft;
+	font-family: "Open Sans", Helvetica, sans-serif;
 	position: absolute;
 	top: 1px;
 	width: 100%;
