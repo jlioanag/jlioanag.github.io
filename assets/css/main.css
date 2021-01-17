@@ -1323,7 +1323,7 @@ input, select, textarea {
 
 	body {
 		/* background-image: url("images/overlay.png"), url("images/bg.jpg"); */
-		background-color:#646375;
+		background-color:#181716;
 		background-repeat: repeat, no-repeat;
 		background-size: auto, 100% 100%;
 		background-attachment: fixed;
@@ -1399,6 +1399,7 @@ input, select, textarea {
 	h3, h4, h5, h6 {
 		font-size: 1.25em;
 		letter-spacing: -0.015em;
+		/* padding-bottom: 0.5em; */
 	}
 
 	@media screen and (max-width: 736px) {
@@ -1891,7 +1892,7 @@ input, select, textarea {
 /* Wrapper */
 
 	#wrapper {
-		padding-top: 8em;
+		padding-top: 10em;
 		width: 45em;
 		margin: 0 auto;
 		min-height: 100vh;
