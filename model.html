@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset="utf-8">
+        <style>
+            body {margin: 0;/* background-color: teal; */}
+        </style>
+	</head>
+	<body>
+		<script type="module">
+			import * as THREE from 'https://unpkg.com/three@0.124.0/build/three.module.js';
+			import {OrbitControls} from 'https://threejsfundamentals.org/threejs/resources/threejs/r122/examples/jsm/controls/OrbitControls.js';
+
+			import {GLTFLoader} from 'https://unpkg.com/three@0.124.0/examples/jsm/loaders/GLTFLoader.js';
+			
+			const loader = new GLTFLoader();
+
+			const scene = new THREE.Scene();
+			const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+
+			// loader.load('ftb/scene.gltf', function(gltf) {
+			// 	scene.add(gtlf.scene);
+			// }, undefined, function(error) {
+			// 	console.error(error);
+			// });
+			loader.load('daft/scene.gltf', (gltf) => {
+                const root = gltf.scene;
+                root.position.y = 20;
+				scene.add(root);
+				console.log("worked!");
+			});
+
+
+			// const color = 0xFFFFFF;
+			// const intensity = 1;
+			// const light = new THREE.AmbientLight(color, intensity);
+			// scene.add(light);
+			const light = new THREE.AmbientLight(0x404040); // soft white light
+			scene.add(light);
+
+			const directionalLight = new THREE.DirectionalLight( 0xffd1dc, 10 );
+			scene.add( directionalLight );
+
+            const renderer = new THREE.WebGLRenderer({alpha: true});
+            renderer.setClearColor( 0x000000, 0 );
+			renderer.setSize(window.innerWidth, window.innerHeight);
+			document.body.appendChild(renderer.domElement);
+			
+			// const geometry = new THREE.BoxGeometry();
+			// const material = new THREE.MeshBasicMaterial( {color: 0x00ff00});
+			// const cube = new THREE.Mesh(geometry, material);
+			// scene.add(cube);
+			
+
+			const controls = new OrbitControls( camera, renderer.domElement );
+
+			//controls.update() must be called after any manual changes to the camera's transform
+			// camera.position.set( 0, 20, 100 );
+            camera.position.z = 40;
+            camera.position.y = 30;
+			controls.autoRotate = true;
+			controls.update();
+
+			function animate() {
+				requestAnimationFrame(animate);
+				// root.rotation.x += 0.01;
+				controls.update();
+				renderer.render(scene, camera);
+			}
+			animate();
+
+		</script>
+	</body>
+</html>
