@@ -3,7 +3,10 @@
 	<head>
         <meta charset="utf-8">
         <style>
-            body {margin: 0;/* background-color: teal; */}
+			body {margin: 0;/* background-color: teal; */}
+			::-webkit-scrollbar {
+				display: none;	
+			}	
         </style>
 	</head>
 	<body>
@@ -23,7 +26,7 @@
 			// }, undefined, function(error) {
 			// 	console.error(error);
 			// });
-			loader.load('daft/scene.gltf', (gltf) => {
+			loader.load('canti/scene.gltf', (gltf) => {
                 const root = gltf.scene;
                 // root.position.y = 20;
 				scene.add(root);
@@ -38,7 +41,7 @@
 			const light = new THREE.AmbientLight(0x404040); // soft white light
 			scene.add(light);
 
-			const directionalLight = new THREE.DirectionalLight( 0xffd1dc, 10 );
+			const directionalLight = new THREE.DirectionalLight( 0xffd1dc, 1.6 );
 			scene.add( directionalLight );
 
             const renderer = new THREE.WebGLRenderer({alpha: true});
@@ -55,7 +58,7 @@
 			const controls = new OrbitControls( camera, renderer.domElement );
 
 			//controls.update() must be called after any manual changes to the camera's transform
-			camera.position.set( 0, 5, 16 );
+			camera.position.set(-50, 45, 70 );
             // camera.position.z = 40;
             // camera.position.y = 30;
 			controls.autoRotate = true;
