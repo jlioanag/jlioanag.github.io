@@ -2,7 +2,7 @@ import './App.css';
 
 function App() {
   return (
-    <div>
+    <div class="font-body">
       <div class="py-2 bg-metal">
         <div class="max-w-xl mx-auto px-4 sm:px-6 lg:px-8">
           <img class="object-scale-down" alt="julian lioanag" src={require("./logo.png")}></img>

@@ -13,6 +13,10 @@ module.exports = {
       'd-purple': '#404463',
       'silver': '#ece2d0',
     },
+    fontFamily: {
+      'body': ['Courier'],
+    },
+
     extend: {},
   },
   plugins: [],
