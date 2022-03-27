@@ -3,10 +3,14 @@ import './App.css';
 function App() {
   return (
     <div class="font-body">
+      <div class="overlay"></div>
       <div class="py-2 bg-metal">
         <div class="max-w-xl mx-auto px-4 sm:px-6 lg:px-8">
-          <img class="object-scale-down" alt="julian lioanag" src={require("./logo.png")}></img>
+          <img class="bruh object-scale-down" alt="julian lioanag" src={require("./logo.png")}></img>
         </div>
+        {/* <div class="text-center text-5xl font-bold mx-auto pt-5 pb-5 px-4 sm:px-6 lg:px-8 text-white lg:mx-auto"> 
+          <p class="bruh">julian lioanag</p> 
+        </div> */}
       </div>
       
       <div class="py-2 bg-metal">
