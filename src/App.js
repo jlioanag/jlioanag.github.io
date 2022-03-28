@@ -15,18 +15,26 @@ function App() {
       
       <div class="py-2 bg-metal">
         <div class="items-center h-12 space-x-5 space-y-2 text-center">
-          <button class="bg-white hover:bg-silver text-metal font-bold py-2 px-4 inline-flex items-center">
-            <span><a href="https://jlioanag.github.io/resume.pdf">/resume</a></span>
-          </button>
-          <button class="bg-white hover:bg-silver text-metal font-bold py-2 px-4 inline-flex items-center">
-            <span><a href="https://github.com/jlioanag">/github</a></span>
-          </button>
-          <button class="bg-white hover:bg-silver text-metal font-bold py-2 px-4 inline-flex items-center">
-            <span><a href="https://www.linkedin.com/in/jlioanag/">/linkedin</a></span>
-          </button>
-          <button class="bg-white hover:bg-silver text-metal font-bold py-2 px-4 inline-flex items-center">
-            <span><a href="https://soundcloud.com/jalgernon">/jalgernon</a></span>
-          </button>
+          <a href="https://jlioanag.github.io/resume.pdf">
+            <button class="bg-white hover:bg-silver text-metal font-bold py-2 px-4 inline-flex items-center">
+              <span>resume</span>
+            </button>
+          </a>
+          <a href="https://github.com/jlioanag">
+            <button class="bg-white hover:bg-silver text-metal font-bold py-2 px-4 inline-flex items-center">
+              <span>github</span>
+            </button>
+          </a>
+          <a href="https://www.linkedin.com/in/jlioanag/">
+            <button class="bg-white hover:bg-silver text-metal font-bold py-2 px-4 inline-flex items-center">
+              <span>linkedin</span>
+            </button>
+          </a>
+          <a href="https://soundcloud.com/jalgernon">
+            <button class="bg-white hover:bg-silver text-metal font-bold py-2 px-4 inline-flex items-center">
+              <span>jalgernon</span>
+            </button>
+          </a>
         </div>
       </div>
 
