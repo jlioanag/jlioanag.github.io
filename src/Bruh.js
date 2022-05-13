@@ -38,7 +38,7 @@ function Bruh() {
           <p class="mt-4 max-w-xl lg:max-w-4xl text-3xl lg:text-4xl text-silver lg:mx-auto">
             Aside from school and coding, I also enjoy listening, crate digging, and creating music. I play drums, guitar, and bass guitar, and have taken music theory courses. <i>You can find what I've been listening to recently</i> <a class="bg-white hover:bg-silver hover:text-l-purple text-metal font-semibold" href="https://rateyourmusic.com/~jthemage">here.</a>
           </p>
-          <p class="mt-4 lg:max-w-xl text-3xl lg:text-4xl text-silver lg:mx-auto">
+          <p class="mt-4 max-w-xl lg:max-w-4xl text-3xl lg:text-4xl text-silver lg:mx-auto">
             Other interests include: cooking, photography, and custom keyboards.
           </p>
         </div>
