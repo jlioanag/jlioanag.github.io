@@ -4,11 +4,13 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Footer from './Footer';
+import Bruh from './Bruh';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
-    <Footer />
+    {/* <App />
+    <Footer /> */}
+    <Bruh />
   </React.StrictMode>,
   document.getElementById('root')
 );
