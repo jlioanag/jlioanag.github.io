@@ -10,14 +10,19 @@ module.exports = {
       'l-purple': '#616794',
       'midnight': '#253031',
       'metal': '#51567b',
-      'd-purple': '#404463',
+      'brown': '#404463',
       'silver': '#ece2d0',
+      'coffee': '#e0b89b',
     },
     fontFamily: {
       'body': ['Courier'],
     },
 
-    extend: {},
+    extend: {
+      // backgroundImage: {
+      //   'hero': "url('/public/images/who.jpg')",
+      // },
+    },
   },
   plugins: [],
 }
