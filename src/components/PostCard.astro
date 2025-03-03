@@ -1,0 +1,15 @@
+---
+import '@/styles/global.css';
+const { post } = Astro.props;
+---
+<article class="flex max-w flex-col items-center justify-between">
+    <p class="text-m font-bold ">
+        <a href={post.url} class="text-blue-600">
+            {post.frontmatter.title}
+        </a>
+        -
+        <time>
+            {new Date(post.frontmatter.pubDate).toLocaleDateString()}
+        </time>
+    </p>
+</article>
