@@ -2,6 +2,8 @@
 import "@/styles/global.css";
 import PostList from "@/components/PostList.astro";
 import Navbar from "@/components/Navbar.astro";
+import { Image } from 'astro:assets';
+import barley from '@/assets/barley.jpg';
 ---
 
 <html lang="en">
@@ -14,8 +16,9 @@ import Navbar from "@/components/Navbar.astro";
   <body>
     <div class="text-center bg-grey-100">
       <Navbar />
-      <p>coding, music, photos, and tcgs</p>
-      <a href="/blog" class="text-blue-600">View my blog</a>
+      <p class="pt-10">coding, music, photos, and tcgs</p>
+      <a href="/blog" class="text-blue-600">view my blog</a>
     </div>
+    <Image src={barley} class="mx-auto rounded-3xl scale-50" alt="my cat"/>
   </body>
 </html>
