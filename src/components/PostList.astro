@@ -3,12 +3,7 @@ import PostCard from "./PostCard.astro";
 
 const posts = Object.values(import.meta.glob('@/pages/posts/*.mdx', { eager: true }));
 ---
-
-<div class="mt-12 sm:mt-14">
-  <h3 class="text-center text-2xl font-bold">
-    Here are my posts in reverse chronological order
-  </h3>
-  <div class="mx-auto grid max-w grid-cols-1 gap-x-1 gap-y-1 pt-10 sm:pt-2 lg:mx-0 lg:max-w-none lg:grid-cols-1">
+  <div class="mx-auto grid max-w sm:grid-cols-1 gap-x-1 gap-y-1 pt-10 sm:pt-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:px-25 p-4">
       {posts
         .sort((a: any, b: any) => new Date(b.frontmatter.pubDate).getTime() - new Date(a.frontmatter.pubDate).getTime())
         .map((post: any) => (

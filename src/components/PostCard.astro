@@ -1,15 +1,26 @@
 ---
 import '@/styles/global.css';
+import Tag from './Tag.astro';
 const { post } = Astro.props;
+const tags = post.frontmatter.tags;
 ---
-<article class="flex max-w flex-col items-center justify-between">
-    <p class="text-m font-bold ">
-        <a href={post.url} class="text-blue-600">
+<article class="p-3 justify-between border-2relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-96">
+    <a href={post.url}>
+        <p class="mb-0.5 text-slate-800 text-xl font-semibold">
             {post.frontmatter.title}
-        </a>
-        -
-        <time>
-            {new Date(post.frontmatter.pubDate).toLocaleDateString()}
-        </time>
-    </p>
+        </p>
+        <p class="text-slate-600 leading-normal font-light mb-1">
+            <time>
+                {new Date(post.frontmatter.pubDate).toLocaleDateString()}
+            </time>
+        </p>
+        {
+            tags.map((tag: any) => (
+                        <Tag
+                            text={tag}
+                            colors="bg-purple-100 text-purple-800"
+                        />
+                    ))
+        }
+    </a>
 </article>
