@@ -4,12 +4,15 @@ import Tag from './Tag.astro';
 const { post } = Astro.props;
 const tags = post.frontmatter.tags;
 ---
-<article class="p-3 justify-between border-2relative flex flex-col my-6 bg-white shadow-sm border border-slate-200 rounded-lg w-96">
+<article class="transition delay-150 duration-300 ease-in-out hover:scale-102 p-3 justify-between border-2relative flex flex-col my-6 bg-white drop-shadow-md border-1 border-slate-200 rounded-lg w-96">
     <a href={post.url}>
-        <p class="mb-0.5 text-slate-800 text-xl font-semibold">
+        <p class="mb-0.5 text-slate-800 text-xl">
             {post.frontmatter.title}
         </p>
-        <p class="text-slate-600 leading-normal font-light mb-1">
+        <p class="text-slate-600
+            leading-normal
+            font-light
+            mb-1">
             <time>
                 {new Date(post.frontmatter.pubDate).toLocaleDateString()}
             </time>
