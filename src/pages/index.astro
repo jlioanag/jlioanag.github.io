@@ -1,9 +1,7 @@
 ---
 import "@/styles/global.css";
-import PostList from "@/components/PostList.astro";
 import Navbar from "@/components/Navbar.astro";
-import { Image } from 'astro:assets';
-import barley from '@/assets/barley.jpg';
+import Link from "@components/Link.astro";
 ---
 
 <html lang="en">
@@ -15,13 +13,16 @@ import barley from '@/assets/barley.jpg';
   </head>
   <body>
       <Navbar />
-      <div class="grid grid-cols-2 px-25">
-        <div class="text-left">
-          about
-        </div>
-        <div class="text-left">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
+      <div class="grid md:grid-cols-2 grid-cols-1 px-4 md:px-25 py-10 mx-auto gap-y-12 text-left text-md">
+        <div>bio</div>
+        <p>Full stack developer currently working with React and <Link nav="https://backstage.io/" text="Backstage.io"/>; coding in TypeScript. Graduated from Rensselaer Polytechnic Institute with M.S. in ITWS<sup>'23</sup> and B.S. in Computer Science<sup>'22</sup>. Hobbies include - music, bouldering, photography, and One Piece TCG.</p>
+
+        <div>work experience</div>
+        <ul class="text-sm">
+          <li>UBS - Software Engineer<sup>2023-present</sup></li>
+          <li>United Airlines - Stats & Ops. Research Intern<sup>2022</sup></li>
+          <li>The Cigna Group - Software Engineer Intern<sup>2021</sup></li>
+        </ul>
       </div>
     <!-- <Image src={barley} class="mx-auto rounded-3xl scale-20" alt="my cat"/> -->
   </body>
