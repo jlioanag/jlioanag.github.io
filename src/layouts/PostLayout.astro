@@ -3,6 +3,7 @@ import Navbar from "@components/Navbar.astro";
 import Prose from "@components/Prose.astro";
 import Tag from "@/components/Tag.astro";
 import "@/styles/global.css";
+import Footer from "@components/Footer.astro";
 
 const { frontmatter } = Astro.props;
 const tags: string[] = frontmatter.tags;
@@ -19,9 +20,9 @@ const tags: string[] = frontmatter.tags;
     <body>
         <Navbar />
         <div
-            class="container border-1 border-gray-200 p-5 rounded-lg mt-10 shadow-xl mx-auto"
+            class="container border-1 border-gray-200 py-5 px-10 rounded-lg mt-10 shadow-xl mx-auto mb-20"
         >
-            <div class="flex">
+            <div class="flex pb-5">
                 <Tag
                     text={new Date(frontmatter.pubDate).toLocaleDateString()}
                     colors="bg-gray-200 text-gray-800"
@@ -39,5 +40,6 @@ const tags: string[] = frontmatter.tags;
                 <slot />
             </Prose>
         </div>
+        <Footer />
     </body>
 </html>
