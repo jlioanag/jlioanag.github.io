@@ -22,12 +22,12 @@ const links = [
 ---
 
 <nav
-    class="fixed top-3 left-10 right-10 z-50 flex items-center justify-center md:justify-between rounded-lg py-2 px-4 lg:mx-50 mx-auto"
+    class="fixed top-2 -left-50 z-50 flex items-center justify-center md:justify-between rounded-lg py-2 px-4 lg:mx-50 mx-auto"
 >
     <div class="flex">
         {
             links.map((link) => (
-                <div class="border-1 hover:bg-purple-200 mx-1 px-1 transition ease-in-out duration-200 rounded-xl text-center bg-purple-100 text-purple-800 inset-shadow-purple-400 hover:inset-shadow-purple-700 inset-shadow-sm">
+                <div class="border-1 hover:bg-purple-200 mx-1 px-1 transition ease-in-out duration-200 rounded-xl text-center bg-purple-100 text-purple-600 inset-shadow-purple-400 hover:inset-shadow-purple-700 inset-shadow-sm">
                     <a href={link.href} class="mx-1 flex navbar-item">
                         {link.title}
                     </a>
