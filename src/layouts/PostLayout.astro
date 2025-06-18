@@ -20,18 +20,18 @@ const tags: string[] = frontmatter.tags;
     <body>
         <Navbar />
         <div
-            class="container border-1 border-gray-200 py-5 px-10 rounded-lg mt-25 shadow-xl mx-auto mb-20"
+            class="container border-1 border-gray-200 py-5 px-10 mt-25 mx-auto mb-20"
         >
             <div class="flex pb-5">
                 <Tag
                     text={new Date(frontmatter.pubDate).toLocaleDateString()}
-                    colors="bg-gray-200 text-gray-800 inset-shadow-gray-400 inset-shadow-sm"
+                    colors="bg-gray-200 text-gray-800"
                 />
                 {
                     tags.map((tag: any) => (
                         <Tag
                             text={tag}
-                            colors="bg-purple-100 text-purple-800 inset-shadow-purple-400 inset-shadow-sm"
+                            colors="bg-purple-100 text-purple-800"
                         />
                     ))
                 }
@@ -40,6 +40,6 @@ const tags: string[] = frontmatter.tags;
                 <slot />
             </Prose>
         </div>
-        <Footer />
+        <!-- <Footer /> -->
     </body>
 </html>

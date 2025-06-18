@@ -15,23 +15,21 @@ import Link from "@components/Link.astro";
   </head>
   <body>
       <Navbar />
-      <div class="mb-25 grid md:grid-cols-3 grid-cols-1 px-10 sm:px-15 lg:px-50 xl:px-100 mt-25 mx-auto gap-y-12 text-left text-md md:gap-x-8">
-        <div class="md:text-right underline underline-offset-4">bio</div>
-        <p class=" inset-shadow-sm inset-shadow-gray-500/30 border-1 border-slate-200 rounded-lg p-5 col-span-2">Full stack developer currently working with React and <Link nav="https://backstage.io/" text="Backstage.io"/>; coding in TypeScript. Graduated from Rensselaer Polytechnic Institute with M.S. in ITWS<sup>(2023)</sup> and B.S. in Computer Science<sup>(2022)</sup>. Hobbies include - music, indoor bouldering, photography, and the One Piece TCG.</p>
+      <div class="grid mx-auto gap-y-15 text-left text-md p-5">
+        <p class="border-1 border-slate-200 p-5 col-span-2 lg:mr-100 ">Full stack developer currently working with React and <Link nav="https://backstage.io/" text="Backstage.io"/>; coding in TypeScript. Graduated from Rensselaer Polytechnic Institute with M.S. in ITWS<sup>(2023)</sup> and B.S. in Computer Science<sup>(2022)</sup>. Hobbies include - music, indoor bouldering, photography, and the One Piece TCG.</p>
 
-        <div class="md:text-right underline underline-offset-4">work experience</div>
-        <div class="col-span-2 mt-1">
-            <div class="inset-shadow-sm inset-shadow-gray-500/30 border-1 border-slate-200 rounded-lg px-5 pt-3 pb-3 mb-5 max-w-xs">
+        <div class="col-span-2">
+            <div class="border-1 border-slate-200 px-5 pt-3 pb-3 mb-5 max-w-xs">
             <p>UBS</p>
             <i class="text-gray-700 text-sm">Software Engineer</i>
             <p class="text-purple-600 text-sm pb-2">2023 to present</p>
             </div>
-          <div class="inset-shadow-sm inset-shadow-gray-500/30 border-1 border-slate-200 rounded-lg px-5 pt-3 pb-3 mb-5 max-w-xs">
+          <div class="border-1 border-slate-200 px-5 pt-3 pb-3 mb-5 max-w-xs">
             <p>United Airlines</p>
             <i class="text-gray-700 text-sm">Statistics & Operations Intern</i>
             <p class="text-purple-600 text-sm pb-2">2022</p>
           </div>
-          <div class="inset-shadow-sm inset-shadow-gray-500/30 border-1 border-slate-200 rounded-lg px-5 pt-3 pb-3 mb-5 max-w-xs">
+          <div class="border-1 border-slate-200 px-5 pt-3 pb-3 mb-5 max-w-xs">
             <p>The Cigna Group</p>
             <i class="text-gray-700 text-sm">Software Engineer Intern</i>
             <p class="text-purple-600 text-sm">2021</p>
@@ -39,6 +37,6 @@ import Link from "@components/Link.astro";
         </div>
       </div>
     <!-- <Image src={barley} class="mx-auto rounded-3xl scale-20" alt="my cat"/> -->
-    <Footer />
+    <!-- <Footer /> -->
   </body>
 </html>

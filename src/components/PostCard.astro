@@ -4,7 +4,7 @@ import Tag from './Tag.astro';
 const { post } = Astro.props;
 const tags = post.frontmatter.tags;
 ---
-<article class="transition delay-150 duration-300 ease-in-out hover:scale-102 p-3 justify-between relative flex flex-col my-6 bg-white inset-shadow-sm inset-shadow-gray-500/30 border-1 border-slate-200 rounded-lg w-96">
+<article class="transition delay-150 duration-300 ease-in-out hover:scale-102 p-3 justify-between relative flex flex-col my-6 border-1 border-slate-200 w-96">
     <a href={post.url}>
         <p class="mb-0.5 text-slate-800 text-xl">
             {post.frontmatter.title}
@@ -21,7 +21,7 @@ const tags = post.frontmatter.tags;
             tags.map((tag: any) => (
                         <Tag
                             text={tag}
-                            colors="bg-purple-100 text-purple-800 inset-shadow-purple-400 inset-shadow-sm"
+                            colors="bg-purple-100 text-purple-800"
                         />
                     ))
         }
