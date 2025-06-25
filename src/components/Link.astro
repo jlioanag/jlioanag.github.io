@@ -6,6 +6,11 @@ const { nav, text } = Astro.props;
 
 <a
     href={nav}
-    class="text-gray-500 hover:text-gray-700 transition-colors duration-200 inline-flex items-center"
-    >{text} <Icon name="tabler:arrow-up-right" class="mb-1" /></a
+    class="text-gray-500 hover:text-gray-700 transition-colors duration-200 inline-flex items-center group"
 >
+    {text}
+    <Icon
+        name="tabler:arrow-up-right"
+        class="mb-1 transition-transform duration-200 group-hover:translate-x-0.25 group-hover:-translate-y-0.25"
+    />
+</a>
