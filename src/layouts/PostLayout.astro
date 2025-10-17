@@ -19,18 +19,18 @@ const tags: string[] = frontmatter.tags;
     <body>
         <Navbar />
         <div
-            class="container border-1 border-gray-200 py-5 px-10 mt-25 mx-auto mb-20"
+            class="container border border-brown-400 py-5 px-10 mt-25 mx-auto mb-20"
         >
             <div class="flex pb-5">
                 <Tag
                     text={new Date(frontmatter.pubDate).toLocaleDateString()}
-                    colors="bg-gray-200 text-gray-800"
+                    colors="bg-brown-100 text-brown-700"
                 />
                 {
                     tags.map((tag: any) => (
                         <Tag
                             text={tag}
-                            colors="bg-purple-100 text-purple-800"
+                            colors="bg-brown-700 text-brown-100"
                         />
                     ))
                 }

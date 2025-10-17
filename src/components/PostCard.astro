@@ -1,29 +1,30 @@
 ---
-import '@/styles/global.css';
-import Tag from './Tag.astro';
+import "@/styles/global.css";
+import Tag from "./Tag.astro";
 const { post } = Astro.props;
 const tags = post.frontmatter.tags;
 ---
-<article class="transition delay-150 duration-300 ease-in-out hover:scale-102 p-3 justify-between relative flex flex-col my-6 border-1 border-slate-200 w-96">
+
+<article
+    class="transition delay-150 duration-300 ease-in-out hover:scale-102 p-3 justify-between relative flex flex-col my-6 border border-brown-400 w-96"
+>
     <a href={post.url}>
-        <p class="mb-0.5 text-slate-800 text-xl">
+        <p class="mb-0.5 text-xl">
             {post.frontmatter.title}
         </p>
-        <p class="text-slate-600
-            leading-normal
+        <p
+            class="leading-normal
             font-light
-            mb-1">
+            mb-1"
+        >
             <time>
                 {new Date(post.frontmatter.pubDate).toLocaleDateString()}
             </time>
         </p>
         {
             tags.map((tag: any) => (
-                        <Tag
-                            text={tag}
-                            colors="bg-purple-100 text-purple-800"
-                        />
-                    ))
+                <Tag text={tag} colors="bg-brown-700 text-brown-100" />
+            ))
         }
     </a>
 </article>
