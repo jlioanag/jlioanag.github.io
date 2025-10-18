@@ -3,22 +3,27 @@ import "@/styles/global.css";
 import Tag from "./Tag.astro";
 const { post } = Astro.props;
 const tags = post.frontmatter.tags;
+
 ---
 
 <article
-    class="transition delay-150 duration-300 ease-in-out hover:scale-102 p-3 justify-between relative flex flex-col my-6 border border-brown-400 w-96"
+    class="transition delay-150 duration-300 ease-in-out group-hover:animate-marquee hover:scale-102 p-3 justify-between relative flex flex-col my-6 border border-brown-400 w-96"
 >
     <a href={post.url}>
-        <p class="mb-0.5 text-xl">
-            {post.frontmatter.title}
-        </p>
+        <div class="overflow-hidden whitespace-nowrap group relative w-full">
+            <div class="flex w-max">
+                <p class="mb-0.5 text-xl inline-block transition-transform duration-500 marquee-text">
+                    {post.frontmatter.title}
+                </p>
+            </div>
+        </div>
         <p
             class="leading-normal
             font-light
             mb-1"
         >
             <time>
-                {new Date(post.frontmatter.pubDate).toLocaleDateString()}
+                {new Date(post.frontmatter.pubDate).toLocaleDateString('en-US', { timeZone: 'UTC' })}
             </time>
         </p>
         {

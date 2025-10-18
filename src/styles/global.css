@@ -12,10 +12,29 @@
   --color-brown-100: oklch(95% 0.03 85);
   --color-brown-200: oklch(90% 0.07 85);
   --color-brown-300: oklch(85% 0.09 85);
-  --color-brown-400: oklch(80% 0.08 85); /* border */
-  --color-brown-500: oklch(50% 0.10 35); /* muted text */
-  --color-brown-600: oklch(45% 0.10 35); /* medium text */
-  --color-brown-700: oklch(30% 0.10 35); /* primary text */
+  --color-brown-400: oklch(80% 0.08 85);
+  /* border */
+  --color-brown-500: oklch(50% 0.10 35);
+  /* muted text */
+  --color-brown-600: oklch(45% 0.10 35);
+  /* medium text */
+  --color-brown-700: oklch(30% 0.10 35);
+  /* primary text */
+}
+
+@layer components {
+  .group:hover .marquee-text {
+    animation: marquee 8s linear infinite;
+  }
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-100%);
+    }
+  }
 }
 
 html {
@@ -24,7 +43,12 @@ html {
   font-family: var(--font-sans), sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: var(--color-brown-700);
 }
 
@@ -40,14 +64,20 @@ ol li::marker {
   color: var(--color-brown-500);
 }
 
-s, del, strike {
+s,
+del,
+strike {
   color: var(--color-brown-500);
   text-decoration-color: var(--color-brown-500);
 }
 
-p, ul, ol, li {
+p,
+ul,
+ol,
+li {
   color: var(--color-brown-600);
 }
+
 a {
   color: var(--color-brown-500);
   text-decoration: none;
@@ -66,7 +96,8 @@ button {
   border-radius: 0.25rem;
 }
 
-input, textarea {
+input,
+textarea {
   border: 1px solid var(--color-brown-400);
   background-color: var(--color-brown-50);
   color: var(--color-brown-600);
