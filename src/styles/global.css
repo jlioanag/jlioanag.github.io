@@ -54,7 +54,7 @@ a {
 }
 
 a:hover {
-  color: var(--color-brown-600);
+  color: var(--color-brown-700);
   text-decoration: none;
 }
 
