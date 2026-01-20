@@ -9,35 +9,32 @@ const tags: string[] = frontmatter.tags;
 ---
 
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta name="viewport" content="width=device-width" />
-        <meta name="generator" content={Astro.generator} />
-        <title>{frontmatter.title}</title>
-    </head>
-    <body>
-        <Navbar />
-        <div
-            class="container border border-brown-400 py-5 px-10 mt-25 mx-auto mb-20"
-        >
-            <div class="flex pb-5">
-                <Tag
-                    text={new Date(frontmatter.pubDate).toLocaleDateString()}
-                    colors="bg-brown-100 text-brown-700"
-                />
-                {
-                    tags.map((tag: any) => (
-                        <Tag
-                            text={tag}
-                            colors="bg-brown-700 text-brown-100"
-                        />
-                    ))
-                }
-            </div>
-            <Prose>
-                <slot />
-            </Prose>
-        </div>
-    </body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{frontmatter.title}</title>
+  </head>
+  <body>
+    <Navbar />
+    <div
+      class="container border border-brown-400 py-5 px-10 mt-25 mx-auto mb-20"
+    >
+      <div class="flex pb-5">
+        <Tag
+          text={new Date(frontmatter.pubDate).toLocaleDateString()}
+          colors="bg-brown-100 text-brown-700"
+        />
+        {
+          tags.map((tag: any) => (
+            <Tag text={tag} colors="bg-brown-700 text-brown-100" />
+          ))
+        }
+      </div>
+      <Prose>
+        <slot />
+      </Prose>
+    </div>
+  </body>
 </html>
