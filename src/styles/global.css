@@ -14,11 +14,11 @@
   --color-brown-300: oklch(85% 0.09 85);
   --color-brown-400: oklch(80% 0.08 85);
   /* border */
-  --color-brown-500: oklch(50% 0.10 35);
+  --color-brown-500: oklch(50% 0.1 35);
   /* muted text */
-  --color-brown-600: oklch(45% 0.10 35);
+  --color-brown-600: oklch(45% 0.1 35);
   /* medium text */
-  --color-brown-700: oklch(30% 0.10 35);
+  --color-brown-700: oklch(30% 0.1 35);
   /* primary text */
 }
 

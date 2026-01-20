@@ -2,34 +2,44 @@
 import Link from "./Link.astro";
 
 const links = [
-    {
-        href: "/",
-        title: "home",
-    },
-    {
-        href: "/blog",
-        title: "blog",
-    },
-    {
-        href: "https://github.com/jlioanag",
-        title: "github",
-    },
-    {
-        href: "https://linkedin.com/in/jlioanag",
-        title: "linkedin",
-    },
+  {
+    href: "/",
+    title: "home",
+  },
+  {
+    href: "/blog",
+    title: "blog",
+  },
+  {
+    href: "https://github.com/jlioanag",
+    title: "github",
+  },
+  {
+    href: "https://linkedin.com/in/jlioanag",
+    title: "linkedin",
+  },
 ];
 ---
 
-<nav class="z-50 sm:text-xl text-md flex justify-between items-center mx-auto px-5 pt-5">
-    <div class="flex text-brown-500 hover:text-brown-700 transition-colors duration-200">julian lioanag</div>
-    <div class="flex">
-        {
-            links.map((link) => (
-                <div class="mx-1 px-1 transition ease-in-out duration-200">
-                    <Link nav={link.href} text={link.title} class="mx-1 flex navbar-item" />
-                </div>
-            ))
-        }
-    </div>
+<nav
+  class="z-50 sm:text-xl text-md flex justify-between items-center mx-auto px-5 pt-5"
+>
+  <div
+    class="flex text-brown-500 hover:text-brown-700 transition-colors duration-200"
+  >
+    julian lioanag
+  </div>
+  <div class="flex">
+    {
+      links.map((link) => (
+        <div class="mx-1 px-1 transition ease-in-out duration-200">
+          <Link
+            nav={link.href}
+            text={link.title}
+            class="mx-1 flex navbar-item"
+          />
+        </div>
+      ))
+    }
+  </div>
 </nav>
