@@ -5,12 +5,12 @@ const { nav, text } = Astro.props;
 ---
 
 <a
-    href={nav}
-    class="transition-colors duration-200 inline-flex items-center group"
+  href={nav}
+  class="group transition-colors duration-200 inline-flex items-center underline"
 >
-    {text}
-    <Icon
-        name="tabler:arrow-up-right"
-        class="mb-1 transition-transform duration-200 group-hover:translate-x-0.25 group-hover:-translate-y-0.25"
-    />
+  {text}
+  <Icon
+    name="tabler:arrow-up-right"
+    class="mb-1 transition-transform duration-200 group-hover:translate-x-px group-hover:-translate-y-px"
+  />
 </a>

@@ -80,12 +80,10 @@ li {
 
 a {
   color: var(--color-brown-500);
-  text-decoration: none;
 }
 
 a:hover {
   color: var(--color-brown-700);
-  text-decoration: none;
 }
 
 button {
