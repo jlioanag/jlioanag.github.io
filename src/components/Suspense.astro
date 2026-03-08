@@ -1,8 +1,0 @@
----
-const child = Astro.slots.render('default');
-const id = Astro.locals.suspend(child);
----
-
-<span style="display: contents" data-fallback={id}>
-  <slot name="fallback" />
-</span>

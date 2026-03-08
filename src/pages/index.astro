@@ -2,24 +2,11 @@
 import "@/styles/global.css";
 import Navbar from "@/components/Navbar.astro";
 import Link from "@/components/Link.astro";
-import RandomCard from "@/components/RandomCard.astro";
-import Suspense from "@/components/Suspense.astro";
----
 
-<style>
-  @keyframes shimmer {
-    0% {
-      background-position: -1000px 0;
-    }
-    100% {
-      background-position: 1000px 0;
-    }
-  }
-  
-  .skeleton-loader {
-    animation: shimmer 2s infinite;
-  }
-</style>
+const card = await fetch("https://api.scryfall.com/cards/random")
+  .then((response) => response.json())
+  .catch((error) => console.error("Error fetching card:", error));
+---
 
 <html lang="en">
   <head>
@@ -42,10 +29,12 @@ import Suspense from "@/components/Suspense.astro";
           >(2023)</sup
         > and B.S. in Computer Science<sup>(2022)</sup>. Hobbies include -
         music, coffee, backpacking, biking, photography, and
-        <Suspense>
-          <RandomCard />
-          <span class="skeleton-loader inline-block w-64 h-5 bg-linear-to-r from-brown-100 via-brown-50 to-brown-100 rounded" slot="fallback"></span>
-        </Suspense>
+        <span
+          class="underline decoration-wavy cursor-pointer transition-all duration-300 hover:opacity-75"
+          id="randomCard"
+        >
+          trading card games</span
+        >.
       </p>
 
       <div
@@ -70,5 +59,72 @@ import Suspense from "@/components/Suspense.astro";
         <p class="text-brown-500! sm:text-lg text-xs">2021</p>
       </div>
     </div>
+
+    <div
+      id="popup"
+      class="w-75 fixed bg-brown-100 border border-brown-300 p-3 rounded shadow-lg z-50 hidden pointer-events-none text-sm"
+    >
+      <p class="mb-3 text-justify">
+        <span id="unicodeLeft"></span> Random magic card <span id="unicodeRight"
+        ></span>
+      </p>
+      <div class="border border-brown-600 rounded overflow-hidden">
+        <img src={card.image_uris.border_crop} alt={card.name} class="w-full" />
+      </div>
+    </div>
+
+    <script>
+      const unicodeChars = "⼆⅂⁠Ⳡ✣⥪√⹹⾔ⴝ⯎⣜⮙—⮶⾱⪈╴▵⥜⇀ⷕ∔⯸❾⊩⺰⛈";
+
+      function getRandomChar() {
+        return unicodeChars[Math.floor(Math.random() * unicodeChars.length)];
+      }
+
+      function generateRandomChars(count = 3) {
+        return Array(count)
+          .fill(0)
+          .map(() => getRandomChar())
+          .join("");
+      }
+
+      function updateUnicodeChars() {
+        document.getElementById("unicodeLeft").textContent =
+          generateRandomChars();
+        document.getElementById("unicodeRight").textContent =
+          generateRandomChars();
+      }
+
+      const cardLink = document.getElementById("randomCard");
+      const popup = document.getElementById("popup");
+
+      cardLink.addEventListener("click", async () => {
+        try {
+          const response = await fetch("https://api.scryfall.com/cards/random");
+          const newCard = await response.json();
+          const img = popup.querySelector("img");
+          img.src = newCard.image_uris.border_crop;
+          img.alt = newCard.name;
+          updateUnicodeChars();
+        } catch (error) {
+          console.error("Error fetching new card:", error);
+        }
+      });
+
+      cardLink.addEventListener("mouseenter", () => {
+        popup.classList.remove("hidden");
+      });
+
+      cardLink.addEventListener("mouseleave", () => {
+        popup.classList.add("hidden");
+      });
+
+      cardLink.addEventListener("mousemove", (e) => {
+        const x = e.clientX + 25;
+        const y = e.clientY + 25;
+        popup.style.left = x + "px";
+        popup.style.top = y + "px";
+        updateUnicodeChars();
+      });
+    </script>
   </body>
 </html>
