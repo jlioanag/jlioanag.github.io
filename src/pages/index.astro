@@ -1,8 +1,25 @@
 ---
 import "@/styles/global.css";
 import Navbar from "@/components/Navbar.astro";
-import Link from "@components/Link.astro";
+import Link from "@/components/Link.astro";
+import RandomCard from "@/components/RandomCard.astro";
+import Suspense from "@/components/Suspense.astro";
 ---
+
+<style>
+  @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+  
+  .skeleton-loader {
+    animation: shimmer 2s infinite;
+  }
+</style>
 
 <html lang="en">
   <head>
@@ -23,8 +40,12 @@ import Link from "@components/Link.astro";
           text="Backstage.io"
         />. Graduated from Rensselaer Polytechnic Institute with M.S. in ITWS<sup
           >(2023)</sup
-        > and B.S. in Computer Science<sup>(2022)</sup>. Hobbies include: music,
-        coffee, backpacking, indoor bouldering, photography, and TCGs.
+        > and B.S. in Computer Science<sup>(2022)</sup>. Hobbies include -
+        music, coffee, backpacking, biking, photography, and
+        <Suspense>
+          <RandomCard />
+          <span class="skeleton-loader inline-block w-64 h-5 bg-linear-to-r from-brown-100 via-brown-50 to-brown-100 rounded" slot="fallback"></span>
+        </Suspense>
       </p>
 
       <div
