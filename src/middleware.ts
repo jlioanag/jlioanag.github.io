@@ -7,7 +7,7 @@ export const onRequest = defineMiddleware(async (ctx, next) => {
   ctx.locals.suspend = (promise: Promise<string>) => {
     const id = pending.size;
     pending.add(promise);
-    promise.then(chunk => {
+    promise.then((chunk) => {
       pending.delete(promise);
       streamController.enqueue([id, chunk]);
       if (pending.size === 0) {
@@ -21,7 +21,7 @@ export const onRequest = defineMiddleware(async (ctx, next) => {
   const stream = new ReadableStream({
     start(controller) {
       streamController = controller;
-    }
+    },
   });
 
   const res = await next();
@@ -30,7 +30,6 @@ export const onRequest = defineMiddleware(async (ctx, next) => {
   if (!res.headers.get("content-type")?.includes("text/html")) {
     return res;
   }
-
 
   async function* render() {
     for await (const chunk of res.body) {
