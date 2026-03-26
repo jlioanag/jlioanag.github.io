@@ -12,7 +12,7 @@
     "@astrojs/mdx": "^4.1.0",
     "@iconify-json/tabler": "^1.2.16",
     "@tailwindcss/vite": "^4.0.9",
-    "astro": "^5.4.1",
+    "astro": "^5.18.1",
     "astro-icon": "^1.1.5",
     "jlioanag.github.io": "link:",
     "sharp": "^0.33.5",
