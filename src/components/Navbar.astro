@@ -1,22 +1,27 @@
 ---
 import Link from "./Link.astro";
+import { Icon } from "astro-icon/components";
 
 const links = [
   {
     href: "/",
     title: "home",
+    icon: "tabler:home",
   },
   {
     href: "/blog",
     title: "blog",
+    icon: "tabler:news",
   },
   {
     href: "https://github.com/jlioanag",
     title: "github",
+    icon: "tabler:brand-github",
   },
   {
     href: "https://linkedin.com/in/jlioanag",
     title: "linkedin",
+    icon: "tabler:brand-linkedin",
   },
 ];
 ---
@@ -29,15 +34,20 @@ const links = [
   >
     julian lioanag
   </div>
-  <div class="flex">
+  <div class="flex items-center">
     {
       links.map((link) => (
         <div class="mx-1 px-1 transition ease-in-out duration-200">
           <Link
             nav={link.href}
-            text={link.title}
+            text={link.icon ? "" : link.title}
+            showArrow={!link.icon}
             class="mx-1 flex navbar-item"
-          />
+          >
+            {link.icon && (
+              <Icon name={link.icon} class="w-6 h-6" title={link.title} />
+            )}
+          </Link>
         </div>
       ))
     }

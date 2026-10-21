@@ -1,16 +1,24 @@
 ---
 import { Icon } from "astro-icon/components";
 
-const { nav, text } = Astro.props;
+const { nav, text, class: className, showArrow = true } = Astro.props;
 ---
 
 <a
   href={nav}
-  class="group transition-colors duration-200 inline-flex items-center"
+  class:list={[
+    "group transition-colors duration-200 inline-flex items-center",
+    className,
+  ]}
 >
+  <slot />
   {text}
-  <Icon
-    name="tabler:arrow-up-right"
-    class="mb-1 transition-transform duration-200 group-hover:translate-x-px group-hover:-translate-y-px"
-  />
+  {
+    showArrow && (
+      <Icon
+        name="tabler:arrow-up-right"
+        class="mb-1 transition-transform duration-200 group-hover:translate-x-px group-hover:-translate-y-px"
+      />
+    )
+  }
 </a>
