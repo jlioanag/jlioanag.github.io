@@ -5,7 +5,15 @@ import Link from "@/components/Link.astro";
 
 const card = await fetch("https://api.scryfall.com/cards/random")
   .then((response) => response.json())
-  .catch((error) => console.error("Error fetching card:", error));
+  .catch((error) => {
+    console.error("Error fetching card:", error);
+    return null;
+  });
+
+const imageUrl =
+  card?.image_uris?.border_crop ||
+  card?.card_faces?.[0]?.image_uris?.border_crop ||
+  "";
 ---
 
 <html lang="en">
@@ -69,7 +77,11 @@ const card = await fetch("https://api.scryfall.com/cards/random")
         ></span>
       </p>
       <div class="border border-brown-600 rounded overflow-hidden">
-        <img src={card.image_uris.border_crop} alt={card.name} class="w-full" />
+        <img
+          src={imageUrl}
+          alt={card?.name || "Random Magic Card"}
+          class="w-full"
+        />
       </div>
     </div>
 
@@ -102,8 +114,13 @@ const card = await fetch("https://api.scryfall.com/cards/random")
           const response = await fetch("https://api.scryfall.com/cards/random");
           const newCard = await response.json();
           const img = popup.querySelector("img");
-          img.src = newCard.image_uris.border_crop;
-          img.alt = newCard.name;
+          const newImageUrl =
+            newCard?.image_uris?.border_crop ||
+            newCard?.card_faces?.[0]?.image_uris?.border_crop;
+          if (newImageUrl) {
+            img.src = newImageUrl;
+            img.alt = newCard.name;
+          }
           updateUnicodeChars();
         } catch (error) {
           console.error("Error fetching new card:", error);
