@@ -72,14 +72,14 @@ const imageUrl =
       id="popup"
       class="w-75 fixed bg-brown-100 border border-brown-300 p-3 rounded shadow-lg z-50 hidden pointer-events-none text-sm"
     >
-      <p class="mb-3 text-justify">
+      <p class="mb-3 text-center">
         <span id="unicodeLeft"></span> Random magic card <span id="unicodeRight"
         ></span>
       </p>
-      <div class="border border-brown-600 rounded overflow-hidden">
+      <div class="rounded overflow-hidden">     
         <img
           src={imageUrl}
-          alt={card?.name || "Random Magic Card"}
+          alt={card?.name || "..."}
           class="w-full"
         />
       </div>
@@ -136,8 +136,8 @@ const imageUrl =
       });
 
       cardLink.addEventListener("mousemove", (e) => {
-        const x = e.clientX + 25;
-        const y = e.clientY + 25;
+        const x = e.clientX - (e.clientX / 2);
+        const y = e.clientY + 30;
         popup.style.left = x + "px";
         popup.style.top = y + "px";
         updateUnicodeChars();
